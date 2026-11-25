@@ -1,0 +1,78 @@
+:root{
+    --primary: linear-gradient(to right, #0394fc, #a103fc);
+    --white: #fff;
+    --gold: #e6b30e;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+}
+
+body{
+    font-family: 'poppins', sans-serif;
+    color: var(--white);
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--primary);
+    padding: 10px 7%;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.navbar .logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar .logo i{
+    color: var(--gold);
+    margin-right: 0.5rem;
+    font-size: 3rem;
+}
+
+.navbar .logo h1{
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.navbar .logo h1 span{
+    color: var(--gold);
+}
+
+.navbar .nav a{
+    display: inline-block;
+    color: var(--white);
+    font-size: 1rem;
+    margin-right: 0.8rem;
+}
+
+.navbar .nav a:hover{
+    color: var(--gold);
+}
+
+.navbar .nav a::after{
+    content: '';
+    display: block;
+    padding-bottom: 0.3rem;
+    border-bottom: 0.1rem solid var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.navbar .nav a:hover::after{
+    transform: scaleX(0.8);
+}
+
+.navbar .navbar-extra{
+    display: flex;
+}

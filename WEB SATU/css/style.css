@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+:root {
+  --bg: linear-gradient(to right, #0394fc, #a103fc);
+  --white: #fff;
+  --black: #010101;
+  --jarak: 20px;
+}
+
+body {
+  background: var(--bg);
+  /* background-image: url(../img/product-1.jpg); */
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1rem 7%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: 999;
+}
+
+.navbar #logo {
+  color: var(--white);
+  font-weight: 700;
+  user-select: none;
+}
+
+.navbar #logo span {
+  font-style: italic;
+  color: #fca503;
+}
+
+.navbar .nav {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar .nav a {
+  color: var(--white);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 100px 50px 0 50px;
+}
+
+.container .judul {
+  color: var(--white);
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  animation: gerak 1s ease;
+}
+
+@keyframes gerak{
+
+  0% {
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(200px) scale(1.1);
+    
+    /* animation-fill-mode: forwards; */
+  }
+}
+
+.container .daftar-produk {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* margin-left: 50px; */
+  justify-content: center;
+  gap: 25px;
+  /* position: relative; */
+}
+
+.container .daftar-produk .kartu {
+  /* width: 100%; */
+  /* max-width: 350px; */
+  padding: var(--jarak);
+  background-color: var(--white);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  box-shadow: 5px 5px 10px #333333;
+}
+.container .daftar-produk .kartu:hover {
+  /* transform: scale(1.1); */
+  
+}
+
+.container .daftar-produk .kartu .card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container .daftar-produk .kartu .logo-sepatu img {
+  max-width: 40px;
+  height: 25px;
+}
+
+.container .daftar-produk .kartu .nama-logo {
+  font-size: 0.65rem;
+  font-weight: 300;
+  user-select: none;
+}
+
+.container .daftar-produk .kartu .gambar-produk img {
+  width: 100%;
+  height: 180px;
+  /* position: absolute; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  object-fit: contain;
+  /* margin: 1rem; */
+}
+
+.container .daftar-produk .kartu h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.container .daftar-produk .kartu p {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+.container .daftar-produk .kartu .harga {
+  font-size: 1.5rem;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.container .daftar-produk .kartu .btn-buy {
+  width: 100%;
+  background: var(--bg);
+  padding: 0.6rem;
+  font-size: 1rem;
+  color: var(--white);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.container .daftar-produk .kartu .btn-buy:hover {
+  /* color: var(--black); */
+  background: #408eb5;
+}
+
+/* media query */
+
+@media (max-width: 768px) {
+  .container .daftar-produk {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .container .daftar-produk {
+    grid-template-columns: repeat(1,1fr);
+  }
+}
